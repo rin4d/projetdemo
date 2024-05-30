@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe - Choix du Mode</title>
+    <link rel="stylesheet" href="pagetictac.css"> <!-- Assure-toi que ton fichier CSS est lié -->
+</head>
+<body>
+    <div class="container">
+        <h1>Choisissez votre mode de jeu :</h1>
+        <div class="modes">
+            <button id="playerMode">Joueur contre Joueur</button>
+            <button id="computerMode">Joueur contre Ordinateur</button>
+        </div>
+        <div class="image-container">
+            <img src="tac.png" alt="Tic Tac Toe Image">
+        </div>
+    </div>
+    
+    <script>
+        document.getElementById('playerMode').addEventListener('click', function() {
+            window.location.href = 'tictac.html'; // Redirige vers la page joueur.html pour le mode joueur contre joueur
+        });
+
+        document.getElementById('computerMode').addEventListener('click', function() {
+            window.location.href = 'computerGame.html'; // Redirige vers la page ordinateur.html pour le mode joueur contre ordinateur
+        });
+    </script>
+</body>
+</html>

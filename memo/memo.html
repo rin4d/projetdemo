@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memo</title>
+    <link rel="stylesheet" type="text/css" href="memo.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Memory Game</h2>
+        <label for="difficulty">Niveau de difficulté :</label>
+        <select id="difficulty">
+            <option value="4">Facile (4x4)</option>
+            <option value="6">Moyen (6x6)</option>
+            <option value="8">Difficile (8x8)</option>
+        </select>
+        <label for="theme">Thème :</label>
+        <select id="theme">
+            <option value="animals">Animaux</option>
+            <option value="fruits">Fruits</option>
+        </select>
+        <button onclick="startGame()">Démarrer le jeu</button>
+        <div class="game"></div>
+        <div>
+            <span id="player-turn">Tour du joueur 1</span>
+            <div id="scores">
+                Joueur 1: <span id="player1-score">0</span> - Joueur 2: <span id="player2-score">0</span>
+            </div>
+        </div>
+        <button class="reset" onclick="window.location.reload()">Reset Game</button>
+    </div>
+    <script src="memo.js"></script>
+</body>
+</html>

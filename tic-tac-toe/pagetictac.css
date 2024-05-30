@@ -1,0 +1,61 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --orange: #F2C14E;
+}
+
+body {
+    color: var(--orange);
+    font-family: 'Finger Paint', cursive;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #37505C;
+}
+
+.container {
+    text-align: center;
+}
+
+h1 {
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+.modes {
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 10px;
+    background-color: var(--orange);
+    color: #333;
+    border-color: var(--orange);
+    font-size: 18px;
+    transition: 200ms transform;
+    font-weight: 600;
+}
+
+button:hover {
+    cursor: pointer;
+    transform: translateY(-2px);
+}
+
+/* Styles existants */
+
+.image-container {
+    margin-top: 40px;
+}
+
+.image-container img {
+    width: 300px; /* Ajuste la taille de l'image selon tes préférences */
+    height: auto; /* Garantit que l'image respecte les proportions */
+}

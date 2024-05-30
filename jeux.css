@@ -1,0 +1,33 @@
+body { 
+  margin: 0px;
+  font-family: "Source Sans 3", sans-serif;
+  border-radius: 4px; 
+  border: 1px solid #ccc; 
+  padding: 8px; 
+  box-sizing: border-box;
+  flex-direction: column;
+  text-align: center;
+}
+
+h4 {
+  text-align: center;
+}
+
+section {
+  display: inline-block;
+  width: 200px; 
+  margin: 10px; 
+  padding: 10px; 
+  border: 2px solid #ccc; 
+  border-radius: 5px; 
+  text-align: center; 
+}
+
+.game-title {
+  font-size: 36px; 
+  margin-bottom: 10px;
+}
+
+ul {
+  list-style-type: none;
+}

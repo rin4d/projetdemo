@@ -1,0 +1,121 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: monospace;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #0a3c2f;
+}
+
+.container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+    background: #0d614b;
+    padding: 40px 60px;
+}
+
+h2 {
+    font-size: 3em;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.reset {
+    padding: 15px 20px;
+    color: #267c65;
+    background: #fff;
+    border: none;
+    font-size: 1.5em;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.reset:focus {
+    color: #fff;
+    background: #267c65;
+}
+
+.game {
+    display: grid;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d;
+    perspective: 500px;
+}
+
+/* Grilles dynamiques en fonction de la difficulté */
+.grid-4 {
+    grid-template-columns: repeat(4, 100px);
+    width: 440px; /* Ajusté pour inclure les marges */
+    height: 440px; /* Ajusté pour inclure les marges */
+}
+
+.grid-6 {
+    grid-template-columns: repeat(6, 70px);
+    width: 440px; /* Ajusté pour inclure les marges */
+    height: 440px; /* Ajusté pour inclure les marges */
+}
+
+.grid-8 {
+    grid-template-columns: repeat(8, 50px);
+    width: 440px; /* Ajusté pour inclure les marges */
+    height: 440px; /* Ajusté pour inclure les marges */
+}
+
+.item {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em;
+    background: #fff;  
+    transition: transform 0.25s;
+    transform: rotateY(180deg);
+}
+
+.item.boxOpen {
+    transform: rotateY(0deg);
+}
+
+.item::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: #209d7b;
+    transition: transform 0.25s;
+    transform: rotateY(0deg);
+    backface-visibility: hidden;
+}
+
+.boxOpen::after,
+.boxMatch::after {
+    transform: rotateY(180deg);
+}
+
+/* Styles pour le score et le tour des joueurs */
+#player-turn {
+    font-size: 1.5em;
+    color: #fff;
+}
+
+#scores {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-size: 1.5em;
+    color: #fff;
+}

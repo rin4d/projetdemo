@@ -1,0 +1,58 @@
+/*/
+body{ margin:0px;
+    font-family: "Sarabun", sans-serif;
+  font-weight: 10;
+  font-style: normal;
+  border-radius: 4px; 
+  border: 1px solid #ccc; 
+  padding: 8px; 
+  box-sizing: border-box;
+}
+
+header nav{
+    background-color:rgba(65, 65, 65, 0.997);
+    padding: 10px;
+    text-align: right;
+    transition: all 0.2s ease;
+    border-bottom: 2px solid rgba(65, 65, 65, 0.997);
+}
+header nav a{
+    color:white;
+    text-decoration: none;
+    border-bottom: 2px solid white;
+    }
+
+
+.choice-container {
+    text-align: center; 
+    margin-bottom: 20px; 
+}
+
+.choice-container img {
+    width: 50px; 
+    height: auto; 
+}
+/*/
+
+body {
+    margin: 0;
+    font-family: "Sarabun", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    height: 100vh; /* Utiliser la hauteur totale de la fenêtre */
+    display: flex;
+    justify-content: center; /* Centrer horizontalement */
+    align-items: center; /* Centrer verticalement */
+    background-color: #f0f0f0; /* Couleur de fond */
+}
+
+section {
+    display: flex;
+    justify-content: space-between; /* Espace égal entre les éléments */
+    width: 80%; /* Largeur du conteneur principal */
+}
+
+.choice-container {
+    text-align: center;
+    width: 45%; /* Largeur des conteneurs de choix */
+}

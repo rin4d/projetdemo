@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contactez-nous</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+1+Code:wght@100..700&family=Sarabun:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+</head>
+<header>
+    <nav>
+    <ul>
+    <li><a href="index.html">Home page</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    </ul>
+    </nav>
+</header>
+<body>
+
+    <h1>Formulaire de contact</h1>
+
+    <form action="index.html" method="post">
+    <fieldset> 
+        <legend>Informations personelles</legend>
+    <label for="nom"> Nom:</label> <input id="nom" type="text" placeholder="Votre Nom" name="nom" required>
+    <label for="prenom"> Prénom:</label> <input id="prenom" type="text" placeholder="Votre prénom" name="prenom" required>
+    <label for="email"> E-mail:</label> <input id="email" type="email" placeholder="Votre e-mail" name="email" required> 
+    <label for="date de naissance"> Date de naissance:</label> <input id="date de naissance" type="date" placeholder="Votre date de naissance" name="date de naissance">
+
+    </fieldset>
+
+    <fieldset>
+        <legend>Informations personelles</legend>
+    <label for="profession"> Profession:</label> <input id="profession" type="text" placeholder="Votre profession" name="profession" required>
+    <label for="entreprise"> Entreprise:</label> <input id="entreprise" type="text" placeholder="Votre entreprise" name="entreprise" required> 
+    <label for="activite"> Secteur d'activité:</label> 
+    <select name="secteur" id="activite"> 
+        <option value=""> --Veuillez choisir une option--</option>
+        <option value="activie">Informatique</option>
+        <option value="activie">Santé</option>
+        <option value="activie">Sport</option>
+        <option value="activie">Marketing</option>
+    </select>
+    </fieldset>
+
+    <fieldset> 
+        <legend>Préférences</legend>
+    <ul class="interet">
+    <li><input id="newsletter" type="checkbox" name="newsletter"><label for="newsletter"> S'abonner à la newletters ?</label>
+    </ul>
+    <h5>Choisissez un centre d'intérêts:</h5>
+    <ul class="interet">
+    <li> <input id="technologie" type="checkbox" name="techno"> <label for="technologie"> Technologie</label>
+    <li> <input id="musique" type="checkbox" name="musique"> <label for="musique"> Musique</label>
+    <li> <input id="sport" type="checkbox" name="sport"> <label for="sport"> Sport</label>
+    </ul>
+    <label for="commentaire"> Commentaires :</label> <br>
+    <textarea name="commentaire" rows="4" cols="50" id="commentaire" ></textarea><br>
+    </fieldset>
+    <input type="submit" value="Envoyer">
+    </form>
+
+</body>
+</html>

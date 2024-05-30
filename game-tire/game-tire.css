@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(120deg, #a6c875, #82b74b, #5aa621);
+    background-size: 600% 100%;
+    animation: gradientBG 10s ease infinite;
+}
+
+.game {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: 400px; /* Réduit la largeur du conteneur de jeu */
+}
+
+.game-infos {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.container {
+    position: relative;
+    height: 400px;
+    width: 400px; /* Ajuste la largeur du conteneur de jeu */
+    border: 1px solid #999;
+    cursor: crosshair;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+#target {
+    height: 60px;
+    width: 60px;
+    position: absolute;
+    transition: 0.25s;
+    animation: animateTarget 10s infinite;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #3C7103;
+    border: 0;
+    color: #fff;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.score-container {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: #3C7103;
+    color: #fff;
+    padding: 10px;
+    border-radius: 6px;
+    display: inline-block;
+}
+
+@keyframes animateTarget {
+    to {
+        transform: translateY(-200px) rotate(90deg);
+    }
+}
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0 50%;
+    }
+}
