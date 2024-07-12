@@ -1,61 +1,29 @@
-<form>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="ppc.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <section>
+        <div class="choix">
+        <h4>Vous<span id="choix-utilisateur"></span></h4>
+        <h4>Ordinateur<span id="choix-ordinateur"></span></h4>
+            </div>
+        <h4><span id="resultat"></span></h4>
+        <div class="bouttons_choix_jeu">
+            <button id="pierre">pierre</button>
+            <button id="papier">papier</button>
+            <button id="ciseaux">ciseaux</button>
+        </div>
 
-    <input type="radio" id="rock-rock" name="rock-paper-scissors">
-    <input type="radio" id="rock-paper" name="rock-paper-scissors">
-    <input type="radio" id="rock-scissors" name="rock-paper-scissors">
-    <input type="radio" id="paper-rock" name="rock-paper-scissors">
-    <input type="radio" id="paper-paper" name="rock-paper-scissors">
-    <input type="radio" id="paper-scissors" name="rock-paper-scissors">
-    <input type="radio" id="scissors-rock" name="rock-paper-scissors">
-    <input type="radio" id="scissors-paper" name="rock-paper-scissors">
-    <input type="radio" id="scissors-scissors" name="rock-paper-scissors">
-  
-    <div>
-      <h1>CSS Rock-Paper-Scissors</h1>
-      <div id="hands">
-        <div class="hand" id="computer-hand">
-          <div class="fist"></div>
-          <div class="finger finger-1"></div>
-          <div class="finger finger-2"></div>
-          <div class="finger finger-3"></div>
-          <div class="finger finger-4"></div>
-          <div class="thumb"></div>
-          <div class="arm"></div>
-        </div>
-  
-        <div class="hand" id="user-hand">
-          <div class="fist"></div>
-          <div class="finger finger-1"></div>
-          <div class="finger finger-2"></div>
-          <div class="finger finger-3"></div>
-          <div class="finger finger-4"></div>
-          <div class="thumb"></div>
-          <div class="arm"></div>
-        </div>
-        
-        <div id="icons">
-          <div>
-            <label for="rock-rock">✊</label>
-            <label for="paper-rock">✊</label>
-            <label for="scissors-rock">✊</label>
-          </div>
-          <div>
-            <label for="rock-paper">🖐️</label>
-            <label for="paper-paper">🖐️</label>
-            <label for="scissors-paper">🖐️</label>
-          </div>
-          <div>
-            <label for="rock-scissors">✌</label>
-            <label for="paper-scissors">✌</label>
-            <label for="scissors-scissors">✌</label>
-          </div>
-        </div>
-      </div>
-    </div>
-  
-    <div id="message">
-      <h2></h2>
-      <input type="reset" value="Refresh Round" />
-    </div>
-  
-  </form>
+    </section>
+
+    <script src="ppc.js"></script>
+</body>
+</html>
