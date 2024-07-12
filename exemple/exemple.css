@@ -1,0 +1,156 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: "Inter", sans-serif;
+}
+
+body {
+    background: #133c18;
+    color: #fff;
+    margin-top: 100px;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 20px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all .50s ease;
+    background-color: rgba(65, 65, 65, 0.997);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 28px;
+    color: #fff;
+    font-weight: 800;
+}
+
+.logo img {
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.navlist {
+    display: flex;
+}
+
+.navlist li {
+    margin: 0 15px;
+}
+
+.navlist a {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all .50s ease;
+}
+
+.navlist a:hover {
+    text-shadow: 3px 3px 20px #066400, -2px 1px 30px #fff;
+}
+
+#menu-icon {
+    font-size: 34px;
+    color: #fff;
+    cursor: pointer;
+    display: none;
+}
+
+.container {
+    min-height: 100vh;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 20px;
+}
+
+h1, h2, h3, p {
+    margin-bottom: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #fff;
+}
+
+h2 {
+    padding: 10px;
+    color: #fff;
+}
+
+main {
+    width: 100%;
+    max-width: 800px;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 14px 35px;
+    background: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 10px;
+    margin-right: 12px;
+    transition: all .6s ease;
+    text-align: center;
+}
+
+.btn:hover {
+    background: #066400;
+    color: #fff;
+    box-shadow: 0 0 20px #066400;
+    transform: scale(1.1);
+}
+
+footer {
+    background: rgba(65, 65, 65, 0.997);
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}
+
+@media (max-width: 768px) {
+    .navlist {
+        display: none;
+        flex-direction: column;
+        background-color: rgba(65, 65, 65, 0.997);
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+    }
+
+    .navlist.active {
+        display: flex;
+    }
+
+    #menu-icon {
+        display: block;
+    }
+
+    .navlist li {
+        margin: 15px 0;
+    }
+}

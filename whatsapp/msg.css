@@ -1,0 +1,50 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+#app {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: white;
+    overflow: hidden;
+}
+#messages {
+    flex: 1;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    overflow-y: auto;
+    height: 300px; /* Limite la hauteur des messages */
+}
+#database {
+    display: none;
+}
+#input-area {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border-top: 1px solid #ccc;
+}
+#input-area input {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+#smileys {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+.smiley {
+    cursor: pointer;
+    font-size: 20px;
+}

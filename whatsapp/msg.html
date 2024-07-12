@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini WhatsApp</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        #app {
+            display: flex;
+            width: 100%;
+            max-width: 1200px;
+            margin: auto;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: white;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        #contacts {
+            width: 30%;
+            border-right: 1px solid #ccc;
+            overflow-y: auto;
+        }
+        #contacts ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        #contacts li {
+            padding: 15px;
+            border-bottom: 1px solid #ccc;
+            cursor: pointer;
+        }
+        #contacts li:hover {
+            background-color: #f0f0f0;
+        }
+        #messages-container {
+            display: flex;
+            flex-direction: column;
+            width: 70%;
+        }
+        #messages {
+            flex: 1;
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+            overflow-y: auto;
+            max-height: 70vh;
+        }
+        .message {
+            padding: 8px 12px;
+            margin: 8px 0;
+            border-radius: 18px;
+            background-color: #e1ffc7;
+            max-width: 80%;
+            word-wrap: break-word;
+        }
+        .message.time-stamp {
+            text-align: right;
+            font-size: 12px;
+            color: gray;
+            margin-top: -8px;
+        }
+        .own-message {
+            align-self: flex-end;
+            background-color: #dcf8c6;
+        }
+        #database {
+            display: none;
+        }
+        #input-area {
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+            border-top: 1px solid #ccc;
+        }
+        #input-area input {
+            flex: 1;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        #input-area button {
+            padding: 10px;
+            background-color: #34b7f1;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+        #input-area button:hover {
+            background-color: #30a3d9;
+        }
+        #smileys {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            margin-top: 10px;
+        }
+        .smiley {
+            cursor: pointer;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="app">
+    <div id="contacts">
+        <ul>
+            <li>Contact 1</li>
+            <li>Contact 2</li>
+            <li>Contact 3</li>
+            <li>Contact 4</li>
+            <li>Contact 5</li>
+        </ul>
+    </div>
+    <div id="messages-container">
+        <div id="messages">
+            <!-- Les messages apparaîtront ici -->
+        </div>
+        <div id="database">
+            <!-- Ce cadre va stocker les messages -->
+        </div>
+        <div id="input-area">
+            <input type="text" id="message-input" placeholder="Tapez votre message...">
+            <button id="send-button">Envoyer</button>
+            <div id="smileys">
+                <!-- Liste de smileys -->
+                <span class="smiley">😊</span>
+                <span class="smiley">😁</span>
+                <span class="smiley">😂</span>
+                <span class="smiley">🤣</span>
+                <span class="smiley">😃</span>
+                <span class="smiley">😄</span>
+                <span class="smiley">😅</span>
+                <span class="smiley">😆</span>
+                <span class="smiley">😉</span>
+                <span class="smiley">😊</span>
+                <span class="smiley">😋</span>
+                <span class="smiley">😎</span>
+                <span class="smiley">😍</span>
+                <span class="smiley">😘</span>
+                <span class="smiley">😗</span>
+                <span class="smiley">😙</span>
+                <span class="smiley">😚</span>
+                <span class="smiley">☺️</span>
+                <span class="smiley">🙂</span>
+                <span class="smiley">🤗</span>
+                <span class="smiley">🤩</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    const input = document.getElementById('message-input');
+    const messages = document.getElementById('messages');
+    const database = document.getElementById('database');
+    const sendButton = document.getElementById('send-button');
+
+    let typingNotification;
+
+    input.addEventListener('input', function() {
+        if (!typingNotification) {
+            const notification = document.createElement('div');
+            notification.id = 'typing-notification';
+            notification.textContent = 'Un utilisateur rédige un message...';
+            messages.appendChild(notification);
+            typingNotification = true;
+        }
+    });
+
+    function sendMessage() {
+        if (input.value.trim() !== '') {
+            const dbMessage = document.createElement('div');
+            dbMessage.textContent = input.value;
+            database.appendChild(dbMessage);
+
+            input.value = '';
+
+            const notification = document.getElementById('typing-notification');
+            if (notification) {
+                notification.remove();
+                typingNotification = false;
+            }
+        }
+    }
+
+    input.addEventListener('keypress', function(event) {
+        if (event.key === 'Enter') {
+            sendMessage();
+        }
+    });
+
+    sendButton.addEventListener('click', sendMessage);
+
+    function transferMessage() {
+        if (database.children.length > 0) {
+            const messageElement = database.firstChild;
+            const messageText = messageElement.textContent;
+            messageElement.remove();
+
+            const message = document.createElement('div');
+            const timeStamp = document.createElement('div');
+            const currentTime = new Date();
+            const timeString = currentTime.toLocaleTimeString();
+
+            message.classList.add('message');
+            message.classList.add('own-message');
+            message.textContent = messageText;
+            timeStamp.classList.add('message', 'time-stamp');
+            timeStamp.textContent = timeString;
+
+            messages.appendChild(message);
+            messages.appendChild(timeStamp);
+
+            messages.scrollTop = messages.scrollHeight;
+        }
+    }
+
+    setInterval(transferMessage, 1000);
+
+    const smileys = document.querySelectorAll('.smiley');
+    smileys.forEach(smiley => {
+        smiley.addEventListener('click', () => {
+            input.value += smiley.textContent;
+            input.focus();
+        });
+    });
+</script>
+
+</body>
+</html>
